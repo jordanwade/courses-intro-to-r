@@ -30,21 +30,33 @@ Click 'Submit Answer' to start learning everything about lists!
 Just click the 'Submit Answer' button.
 
 `@pre_exercise_code`
+
 ```{r}
 # no pec
 ```
+
+
 `@sample_code`
+
 ```{r}
 # Just click the 'Submit Answer' button.
 ```
+
+
 `@solution`
+
 ```{r}
 # Just click the 'Submit Answer' button.
 ```
+
+
 `@sct`
+
 ```{r}
 success_msg("Ready, set, go! Continue to the next exercise.")
 ```
+
+
 ---
 
 ## Lists, why would you need them? (2)
@@ -71,21 +83,33 @@ Click 'Submit Answer' to start the first exercise on lists.
 Click 'Submit Answer' to start the first exercise on lists.
 
 `@pre_exercise_code`
+
 ```{r}
 # no pec
 ```
+
+
 `@sample_code`
+
 ```{r}
 # Click 'Submit Answer' to start the first exercise on lists.
 ```
+
+
 `@solution`
+
 ```{r}
 # Click 'Submit Answer' to start the first exercise on lists.
 ```
+
+
 `@sct`
+
 ```{r}
 success_msg("Cool. Let's get our hands dirty!")
 ```
+
+
 ---
 
 ## Creating a list
@@ -114,10 +138,14 @@ Construct a list, named `my_list`, that contains the variables `my_vector`, `my_
 Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
 
 `@pre_exercise_code`
+
 ```{r}
 # no pec
 ```
+
+
 `@sample_code`
+
 ```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
@@ -131,7 +159,10 @@ my_df <- mtcars[1:10,]
 # Construct list with these different elements:
 my_list <-
 ```
+
+
 `@solution`
+
 ```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
@@ -145,7 +176,10 @@ my_df <- mtcars[1:10,]
 # Construct list with these different elements:
 my_list <- list(my_vector, my_matrix, my_df)
 ```
+
+
 `@sct`
+
 ```{r}
 msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -155,6 +189,8 @@ test_object("my_list",
             incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
 success_msg("Wonderful! Head over to the next exercise.")
 ```
+
+
 ---
 
 ## Creating a named list
@@ -196,10 +232,14 @@ my_list <- list(vec = my_vector)
 Add the other two components in a similar fashion.
 
 `@pre_exercise_code`
+
 ```{r}
 # no pec
 ```
+
+
 `@sample_code`
+
 ```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
@@ -215,7 +255,10 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 # Print out my_list
 ```
+
+
 `@solution`
+
 ```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
@@ -232,7 +275,10 @@ my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 # Print out my_list
 my_list
 ```
+
+
 `@sct`
+
 ```{r}
 msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -245,6 +291,8 @@ test_object("my_list", eq_condition = "equal",
 test_output_contains("my_list", incorrect_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
 success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
 ```
+
+
 ---
 
 ## Creating a named list (2)
@@ -275,6 +323,7 @@ Do not forget to name the list components accordingly (names are moviename, acto
 `shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
 
 `@pre_exercise_code`
+
 ```{r}
 mov <- "The Shining"
 act      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
@@ -284,21 +333,30 @@ scores      <- c(4.5,4,5)
 rev     <- data.frame(scores, sources, comments)
 rm(scores, sources, comments)
 ```
+
+
 `@sample_code`
+
 ```{r}
 # The variables mov, act and rev are available
 
 # Finish the code to build shining_list
 shining_list <- list(moviename = mov)
 ```
+
+
 `@solution`
+
 ```{r}
 # The variables mov, act and rev are available
 
 # Finish the code to build shining_list
 shining_list <- list(moviename = mov, actors = act, reviews = rev)
 ```
+
+
 `@sct`
+
 ```{r}
 msg = "Do not remove or change the definition of the pre-set variables!"
 lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
@@ -308,6 +366,8 @@ test_object("shining_list", eq_condition = "equal",
             incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.");
 success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
 ```
+
+
 ---
 
 ## Selecting elements from a list
@@ -349,10 +409,14 @@ Besides selecting components, you often need to select specific elements out of 
 - To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
 
 `@pre_exercise_code`
+
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
 ```
+
+
 `@sample_code`
+
 ```{r}
 # shining_list is already pre-loaded in the workspace
 
@@ -361,7 +425,10 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 
 # Print the second element of the vector representing the actors
 ```
+
+
 `@solution`
+
 ```{r}
 # shining_list is already pre-loaded in the workspace
 
@@ -371,7 +438,10 @@ shining_list$actors
 # Print the second element of the vector representing the actors
 shining_list$actors[2]
 ```
+
+
 `@sct`
+
 ```{r}
 msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
@@ -379,6 +449,8 @@ test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly 
 test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
 success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
 ```
+
+
 ---
 
 ## Adding more movie information to the list
@@ -419,10 +491,14 @@ shining_list <- c(shining_list, ...)
 You still have to add some code where the three dots are.
 
 `@pre_exercise_code`
+
 ```{r, eval = FALSE}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
 ```
+
+
 `@sample_code`
+
 ```{r}
 # shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
 
@@ -431,7 +507,10 @@ shining_list_full <-
 
 # Have a look at shining_list_full
 ```
+
+
 `@solution`
+
 ```{r}
 # shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
 
@@ -441,7 +520,10 @@ shining_list_full <- c(shining_list, year = 1980)
 # Have a look at shining_list_full
 str(shining_list_full)
 ```
+
+
 `@sct`
+
 ```{r}
 msg = "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
@@ -451,3 +533,5 @@ test_object("shining_list_full", eq_condition = "equal",
 test_function("str", "object", incorrect_msg = "Don't forget to display the structure of `shining_list_full` with `str()`.")
 success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
 ```
+
+
